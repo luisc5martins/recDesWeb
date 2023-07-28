@@ -42,7 +42,7 @@ function formatarPreco(preco) {
             <div class="wrapButton">
                 <m-button @click="limparCarrinho()" texto="Limpar carrinho" />
                 <m-button texto="Fechar carrinho" />
-                <m-button texto="Favoritos" />
+                <m-button texto="Favoritos" @click="$router.push({name: 'favoritos'})" />
                 <m-button texto="Continuar comprando" />
             </div>
         </div>

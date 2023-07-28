@@ -1,8 +1,5 @@
 <script setup>
 
-import messageFav from './messageFav.vue'
-import { fav, adicionarAoFavorito, removerItemFavorito, limparFavorito }
-
 </script>
 fazer alterações pois os códigos são parecidos
 <template>
@@ -23,7 +20,7 @@ fazer alterações pois os códigos são parecidos
                                 <p class="info-livro-preco">{{ formatarPreco(item.price) }}/un</p>
                             </div>
                             <div>
-                                <button @click="removerItemFavorito(item)">&#128465;</button>
+                                <button @click="limparFavorito(item)">&#128465;</button>
                             </div>
                         </div>
                     </div>
