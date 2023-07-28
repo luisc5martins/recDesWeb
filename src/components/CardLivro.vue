@@ -22,13 +22,14 @@ function formatarPreco(preco) {
           <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
         </div>
         <div class="card-buttons-livros">
-          <m-button @click="adicionarAoCarrinho(props.livro)" text="Adicionar Carrinho"/>
-        <m-button text="Favoritos"/>
+          <MButton @click="adicionarAoCarrinho(props.livro)" texto="Adicionar Carrinho"/>
+          <MButton texto="Favoritos"/>
         </div>
       </div>     
 </template>
 
 <style scoped>
+
 .card-livro {
     margin: 5px 10px;
     padding: 10px;
@@ -38,6 +39,8 @@ function formatarPreco(preco) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+    align-items: center;
 }
 
 .wrap-livro {
@@ -62,5 +65,10 @@ function formatarPreco(preco) {
 .card-livro .titulo-livro {
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+.card-buttons-livros {
+  width: 117px;
+  text-align: center;
 }
 </style>

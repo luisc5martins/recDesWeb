@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-const carrinho = ref({
+let carrinho = ref({
   itens: [],
   total: 0
 })
@@ -33,10 +33,9 @@ function adicionarAoCarrinho(livro) {
   }
 }
 
-function limparCarrinho(item) {
-if (item.carrinho.value.itens.length >= 1) {
-  itens = [];
-}
+function limparCarrinho() {
+  carrinho.value.itens = [];
+  carrinho.value.total = 0;
 }
 
 export { carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho }

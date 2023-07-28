@@ -6,7 +6,9 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 </script>
 
 <template>
-  <h1>Minha livraria</h1>
+  <div class="cabecalho">
+    <img src="cabecalho.png" alt="">
+  </div>
   <div class="container-geral">
     <listagem-livros />
     <meu-carrinho />
@@ -16,6 +18,15 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 <style scoped>
 .container-geral {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 3fr 1fr;
+  background-color: rgb(255, 255, 255)
+}
+
+.h1 {
+  background-color: rgb(255, 255, 255);
+}
+
+.cabecalho {
+  margin-left: 30%;
 }
 </style>

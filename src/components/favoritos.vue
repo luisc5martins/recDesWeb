@@ -4,10 +4,6 @@ import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho }
 import MButton from './MButton.vue';
 import MMessage from './MMessage.vue';
 
-function formatarPreco(preco) {
-    return 'R$ ' + preco.toFixed(2).replace('.', ',')
-}
-
 </script>
 
 <template>
@@ -28,11 +24,6 @@ function formatarPreco(preco) {
                                 <p class="info-livro-preco">{{ formatarPreco(item.price) }}/un</p>
                             </div>
                             <div>
-                                <p>
-                                    Quantidade:
-                                    <input type="number" v-model="item.quantidade" @change="atualizaQuantidadeItem(item)"
-                                        min="1" />
-                                </p>
                                 <button @click="removerItemCarrinho(item)">&#128465;</button>
                                 <p>Total: {{ formatarPreco(item.total) }}</p>
                             </div>
