@@ -5,7 +5,7 @@ import MButton from './MButton.vue';
 import MMessage from './MMessage.vue';
 
 </script>
-
+/*fazer alterações pois os códigos são parecidos/*
 <template>
     <div class="carrinho">
         <h2>Meu carrinho</h2>
