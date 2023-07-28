@@ -30,8 +30,7 @@ function formatarPreco(preco) {
                             <div>
                                 <p>
                                     Quantidade:
-                                    <input type="number" v-model="item.quantidade" @change="atualizaQuantidadeItem(item)"
-                                        min="1" />
+                                    <input type="number" v-model="item.quantidade" @change="atualizaQuantidadeItem(item)" min="1" />
                                 </p>
                                 <button @click="removerItemCarrinho(item)">&#128465;</button>
                                 <p>Total: {{ formatarPreco(item.total) }}</p>
@@ -41,11 +40,11 @@ function formatarPreco(preco) {
                 </div>
             </div>
             <div class="wrapButton">
-            <m-button  @click="limparCarrinho()" texto="Limpar carrinho"/>
-            <m-button texto="Fechar carrinho"/>
-            <m-button texto="Favoritos"/>
-            <m-button texto="Continuar comprando"/>
-        </div>
+                <m-button @click="limparCarrinho()" texto="Limpar carrinho" />
+                <m-button texto="Fechar carrinho" />
+                <m-button texto="Favoritos" />
+                <m-button texto="Continuar comprando" />
+            </div>
         </div>
     </div>
 </template>

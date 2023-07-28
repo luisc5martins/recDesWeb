@@ -1,19 +1,18 @@
 <script setup>
 
-import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho } from '@/_data/carrinho.js'
-import MButton from './MButton.vue';
-import MMessage from './MMessage.vue';
+import messageFav from './messageFav.vue'
+import { fav, adicionarAoFavorito, removerItemFavorito, limparFavorito }
 
 </script>
-/*fazer alterações pois os códigos são parecidos/*
+fazer alterações pois os códigos são parecidos
 <template>
-    <div class="carrinho">
-        <h2>Meu carrinho</h2>
-        <div class="wrap-carrinho">
-            <MMessage v-if="carrinho.itens.length === 0" />
+    <div class="favs">
+        <h2>Meus Favoritos</h2>
+        <div class="wrap-favoritos">
+            <messageFav v-if="favoritos.itens.length === 0" />
             <div v-else>
-                <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
-                <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">
+                <p class="favoritos-total">Total: {{ formatarPreco(favoritos.total) }}</p>
+                <div class="item-favoritos" v-for="(item, index) in favoritos.itens" :key="index">
                     <div class="info-livro">
                         <div class="imagem-livro">
                             <img :src="item.img" class="icon-capa-livro" />
@@ -24,37 +23,30 @@ import MMessage from './MMessage.vue';
                                 <p class="info-livro-preco">{{ formatarPreco(item.price) }}/un</p>
                             </div>
                             <div>
-                                <button @click="removerItemCarrinho(item)">&#128465;</button>
-                                <p>Total: {{ formatarPreco(item.total) }}</p>
+                                <button @click="removerItemFavorito(item)">&#128465;</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="wrapButton">
-            <m-button  @click="limparCarrinho()" texto="Limpar carrinho"/>
-            <m-button texto="Fechar carrinho"/>
-            <m-button texto="Favoritos"/>
-            <m-button texto="Continuar comprando"/>
-        </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.carrinho {
+.favs {
     min-width: 20%;
     text-align: center;
 }
 
-.wrap-carrinho .carrinho-total {
+.wrap-favoritos .favoritos-total {
     position: static;
     bottom: 3%;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.item-carrinho .info-livro {
+.item-favoritos .info-livro {
     display: flex;
     margin-bottom: 10px;
 }
