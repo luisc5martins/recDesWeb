@@ -16,17 +16,16 @@ const props = defineProps({
 
 <style scoped>
 button {
-    background-color: blue;
+    background-color: green;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: 1px transparent;
     border-radius: 5px;
-    padding: 5px 10px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: rgb(0, 104, 0);
 }
 
 .primario {

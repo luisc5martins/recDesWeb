@@ -1,15 +1,25 @@
+import homeView from '../views/homeView.vue'
+import favoritosView from '../components/favoritosView.vue'
+import MeuCarrinho from '../components/MeuCarrinho.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-
-import App from '../App.vue'
-import favoritos from '../components/favoritos.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/home',
+      name: 'inicio',
+      component: homeView
+    },
+    {
       path: '/favoritos',
       name: 'favs',
-      component: favoritos
+      component: favoritosView
+    },
+    {
+      path: '/carrinho',
+      name: 'carrinho',
+      component: MeuCarrinho
     }
   ]
 })

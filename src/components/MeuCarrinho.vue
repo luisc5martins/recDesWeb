@@ -1,5 +1,5 @@
 <script setup>
-
+import favoritosView from './favoritosView.vue';
 import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho } from '@/_data/carrinho.js'
 import MButton from './MButton.vue';
 import MMessage from './MMessage.vue';
@@ -42,7 +42,7 @@ function formatarPreco(preco) {
             <div class="wrapButton">
                 <m-button @click="limparCarrinho()" texto="Limpar carrinho" />
                 <m-button texto="Fechar carrinho" />
-                <m-button texto="Favoritos" @click="$router.push({name: 'favoritos'})" />
+                <m-button texto="Favoritos" @click="$router.push({name: 'favs'})"/>
                 <m-button texto="Continuar comprando" />
             </div>
         </div>

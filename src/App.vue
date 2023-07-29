@@ -1,6 +1,7 @@
 <script setup>
 
-import ListagemLivros from "@/components/ListagemLivros.vue"
+import { RouterView } from "vue-router";
+import ListagemLivros from "@/components/ListagemLivros.vue";
 import MeuCarrinho from './components/MeuCarrinho.vue';
 
 </script>
@@ -10,8 +11,7 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
     <img src="cabecalho.png" alt="">
   </div>
   <div class="container-geral">
-    <listagem-livros />
-    <meu-carrinho />
+    <router-view />
   </div>
 </template>
 

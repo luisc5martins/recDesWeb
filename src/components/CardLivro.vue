@@ -23,7 +23,7 @@ function formatarPreco(preco) {
         </div>
         <div class="card-buttons-livros">
           <MButton @click="adicionarAoCarrinho(props.livro)" texto="Adicionar Carrinho"/>
-          <MButton texto="Favoritos"/>
+          <MButton texto="Adicionar aos favoritos"/>
         </div>
       </div>     
 </template>
@@ -33,7 +33,7 @@ function formatarPreco(preco) {
 .card-livro {
     margin: 5px 10px;
     padding: 10px;
-    background-color: beige;
+    background-color: rgb(197, 193, 193);
     border-radius: 10px;
     width: 180px;
     display: flex;
@@ -60,6 +60,8 @@ function formatarPreco(preco) {
 
 .card-livro p {
     margin: 0;
+    margin-bottom: 3px;
+    justify-content: space-evenly;
 }
 
 .card-livro .titulo-livro {
@@ -70,5 +72,6 @@ function formatarPreco(preco) {
 .card-buttons-livros {
   width: 117px;
   text-align: center;
+
 }
 </style>
