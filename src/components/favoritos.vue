@@ -1,11 +1,11 @@
 <script setup>
 
-import { fav, removerItemFavorito } from '@/_data/favoritos.js'
+import { fav, removerItemFavorito, atualizaQuantidadeItem, limparFavorito } from '@/_data/favoritos.js'
 import { livros } from '@/_data/livros.js'
 import messageFav from '@/components/messageFav.vue'
 import MButton from './MButton.vue';
 
-function formatarPreco(preco) {
+function formatarPrecoFav(preco) {
     return 'R$ ' + preco.toFixed(2).replace('.', ',')
 }
 
@@ -19,30 +19,28 @@ function formatarPreco(preco) {
                 <div class="item-fav" v-for="(itens, index) in fav.itens" :key="index">
                     <div class="info-livro-fav">
                         <div class="imagem-livro-fav">
-                            <img :src="item.img" class="capa-livro-fav" />
+                            <img :src="itens.img" class="capa-livro-fav" />
                         </div>
                         <div class="detalhes-livro-fav">
                             <div>
-                                <p>{{ item.title }}</p>
-                                <p class="livro-preco-fav">{{ formatarPreco(item.price) }}/un</p>
+                                <p>{{ itens.title }}</p>
+                                <p class="livro-preco-fav">{{ formatarPrecoFav(itens.price) }}/un</p>
                             </div>
                             <div>
                                 <p>
                                     Quantidade:
-                                    <input type="number" v-model="itens.quantidade" @change="atualizaQuantidadeItem(itens)" min="1" />
+                                    <input type="number" v-model="itens.quantidade" @change="atualizaQuantidadeItem(item)" min="1" />
                                 </p>
                                 <button @click="removerItemFavorito(item)">&#128465;</button>
-                                <p>Total: {{ formatarPreco(item.total) }}</p>
+                                <p>Total: {{ formatarPrecoFav(itens.valor) }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="wrapButton-fav">
-                <m-button @click="limparCarrinho()" texto="Limpar carrinho" />
-                <m-button texto="Fechar carrinho" />
-                <m-button texto="Favoritos" @click="$router.push({name: 'favs'})"/>
-                <m-button texto="Continuar comprando" />
+                <m-button @click="limparFavorito()" texto="Limpar favoritos" />
+                <m-button @click="$router.push({name: 'inicio'})" texto="Página Inicial" />
             </div>
         </div>
     </div>

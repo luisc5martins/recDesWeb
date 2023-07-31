@@ -1,6 +1,7 @@
 import { ref } from 'vue'
+import { livros } from './livros'
 
-let carrinho = ref({
+const carrinho = ref({
   itens: [],
   total: 0
 })
