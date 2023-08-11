@@ -9,19 +9,22 @@ const props = defineProps({
 <template>
     <button>
         <slot>
-            <m-button> {{ props.texto }} </m-button>
+             {{ props.texto }} 
         </slot>
     </button>
 </template>
 
 <style scoped>
 button {
-    background-color: green;
+    background-color: rgb(0, 0, 0);
     color: white;
     font-size: 1rem;
     border: 1px transparent;
     border-radius: 5px;
     cursor: pointer;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
 }
 
 button:hover {

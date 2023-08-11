@@ -33,8 +33,8 @@ function formatarPreco(preco) {
 
 .card-livro {
     margin: 5px 10px;
-    padding: 10px;
-    background-color: rgb(197, 193, 193);
+    padding: 9px;
+    background-color: black;
     border-radius: 10px;
     width: 180px;
     display: flex;
@@ -42,13 +42,17 @@ function formatarPreco(preco) {
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    color: white;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
 }
 
 .wrap-livro {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     width: 180px;
     height: 270px;

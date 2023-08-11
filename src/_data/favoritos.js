@@ -11,7 +11,7 @@ function atualizaQuantidadeItem(item) {
   fav.value.valor += item.valor
 }
 
-  function removerItemFavorito(item) {
+  function removerItemFavorito(itens) {
     const index = fav.value.itens.findIndex((i) => i.id === item.id)
     fav.value.itens.splice(index, 1)
   }

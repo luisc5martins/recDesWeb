@@ -7,6 +7,7 @@ import MButton from './MButton.vue';
 
 function formatarPrecoFav(preco) {
     return 'R$ ' + preco.toFixed(2).replace('.', ',')
+
 }
 
 </script>
@@ -27,12 +28,8 @@ function formatarPrecoFav(preco) {
                                 <p class="livro-preco-fav">{{ formatarPrecoFav(itens.price) }}/un</p>
                             </div>
                             <div>
-                                <p>
-                                    Quantidade:
-                                    <input type="number" v-model="itens.quantidade" @change="atualizaQuantidadeItem(item)" min="1" />
-                                </p>
                                 <button @click="removerItemFavorito(item)">&#128465;</button>
-                                <p>Total: {{ formatarPrecoFav(itens.valor) }}</p>
+                                <p>Total: {{ formatarPrecoFav(itens.price) }}</p>
                             </div>
                         </div>
                     </div>
@@ -68,6 +65,7 @@ function formatarPrecoFav(preco) {
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: white;
 }
 
 .detalhes-livro-fav p {
@@ -110,5 +108,9 @@ function formatarPrecoFav(preco) {
 
 .wrapButton-fav {
     border-radius: 40px;
+}
+
+.capa-livro-fav {
+    width: 200px;
 }
 </style>

@@ -53,6 +53,7 @@ function formatarPreco(preco) {
 .carrinho {
     min-width: 20%;
     text-align: center;
+    color: white;
 }
 
 .wrap-carrinho .carrinho-total {
