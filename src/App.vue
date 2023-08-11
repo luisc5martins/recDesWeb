@@ -19,7 +19,7 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 .container-geral {
   display: grid;
   grid-template-rows: 3fr 1fr;
-  background-color: rgb(255, 255, 255)
+  background-color: rgb(0, 0, 0)
 }
 
 .h1 {
@@ -27,6 +27,8 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 }
 
 .cabecalho {
-  margin-left: 30%;
+  padding-left: 30%;
+  background-color: black;
 }
+
 </style>

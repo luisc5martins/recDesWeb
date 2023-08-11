@@ -41,8 +41,8 @@ function formatarPreco(preco) {
             </div>
             <div class="wrapButton">
                 <m-button @click="limparCarrinho()" texto="Limpar carrinho" />
-                <m-button texto="Fechar compra" @click="$router.push({name: compraView})" />
-                <m-button texto="Favoritos" @click="$router.push({name: 'favs'})"/>
+                <m-button texto="Fechar compra" @click="$router.push({name: 'finalizaCompra'})" />
+                <m-button texto="Favoritos" @click="$router.push({name: 'favs'})" />
                 <m-button texto="Continuar comprando" />
             </div>
         </div>
@@ -65,22 +65,26 @@ function formatarPreco(preco) {
 .item-carrinho .info-livro {
     display: flex;
     margin-bottom: 10px;
+    color: white;
 }
 
 .detalhes-livro {
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: white;
 }
 
 .detalhes-livro p {
     margin: 0;
+    color: white;
 }
 
 .detalhes-livro div {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    color: white;
 }
 
 .detalhes-livro input[type='number'] {
@@ -90,6 +94,7 @@ function formatarPreco(preco) {
     border-bottom: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     margin-left: 10px;
+    color: white;
 }
 
 .detalhes-livro button {
@@ -104,6 +109,7 @@ function formatarPreco(preco) {
 
 .info-livro-preco {
     margin-left: auto;
+    color: white;
 }
 
 .icon-capa-livro {
@@ -113,5 +119,6 @@ function formatarPreco(preco) {
 
 .wrapButton {
     border-radius: 40px;
+    color: white;
 }
 </style>
