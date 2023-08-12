@@ -1,12 +1,9 @@
 <script setup>
 import { ref } from "vue";
 
-import {
-  carrinho,
-  removerItemCarrinho,
-  atualizaQuantidadeItem,
-} from "@/_data/carrinho.js";
+import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, } from "@/_data/carrinho.js";
 import messageCompra from "@/components/messageCompra.vue";
+import MButton from "../components/MButton.vue";
 
 function formatarPreco(preco) {
   return "R$ " + preco.toFixed(2).replace(".", ",");
@@ -15,6 +12,11 @@ function formatarPreco(preco) {
 const nome = ref("");
 const email = ref("");
 const endereco = ref("");
+const numCasa = ref("");
+const bairro = ref("");
+const cidade = ref("");
+const estado = ref("");
+const cep = ref("");
 const formaDePagamento = ref("");
 const senha = ref("");
 const confirmacao = ref("");
@@ -71,15 +73,6 @@ function validar() {
           </div>
         </div>
       </div>
-      <m-button texto="Limpar" />
-      <m-button
-        texto="Comprar"
-        @click="$router.push({ name: 'fechar-compra' })"
-      />
-
-      <button class="continuar" @click="$router.push({ name: 'home' })">
-        Continuar comprando
-      </button>
     </div>
   </div>
   <div class="container">
@@ -113,11 +106,46 @@ function validar() {
           v-model="endereco"
           placeholder="Digite seu endereço"
         />
+        <label for="">Número Imóvel:</label>
+        <input
+          type="text"
+          v-on:keypress="ok = false"
+          v-model="numCasa"
+          placeholder="Digite o número do imóvel"
+        />
+        <label for="">Bairro:</label>
+        <input
+          type="text"
+          v-on:keypress="ok = false"
+          v-model="bairro"
+          placeholder="Digite seu bairro"
+        />
+        <label for="">Cidade:</label>
+        <input
+          type="text"
+          v-on:keypress="ok = false"
+          v-model="cidade"
+          placeholder="Digite sua cidade"
+        />
+        <label for="">Estado:</label>
+        <input
+          type="text"
+          v-on:keypress="ok = false"
+          v-model="estado"
+          placeholder="Digite seu estado"
+        />
+        <label for="">CEP:</label>
+        <input
+          type="text"
+          v-on:keypress="ok = false"
+          v-model="cep"
+          placeholder="Digite seu CEP"
+        />
         <hr />
 
         <label for="formaPagamento">Forma de pagamento:</label>
-        <select v-on:keypress="ok = false" v-model="forma">
-          <option value="cartao">Cartão: Crédito ou debito</option>
+        <select v-on:keypress="ok = false" v-model="formaDePagamento">
+          <option value="cartao">Cartão de crédito</option>
           <option value="pix">Pix</option>
           <option value="boleto">Boleto</option>
         </select>
@@ -142,26 +170,41 @@ function validar() {
         <hr />
         <button class="mostraCompra" type="submit">Mostrar</button>
       </div>
+      <div class="wrap-button-compra">
+      <MButton @click="removerItemCarrinho()" texto="Limpar carrinho" />
+      <MButton @click="$router.push({ name: 'inicio' })" texto="Continuar comprando:" />
+    </div>
     </form>
     <div v-if="ok" class="retorno">
       <p>Total da compra é de: {{ formatarPreco(carrinho.total) }}</p>
       <p>O nome digitado é: {{ nome }}</p>
       <p>O email digitado é: {{ email }}</p>
       <p>O endereço digitado é: {{ endereco }}</p>
-      <p>A forma de pagamento digitada é: {{ forma }}</p>
+      <p>A forma de pagamento digitada é: {{ formaDePagamento }}</p>
       <p>A senha digitada é: {{ senha }}</p>
-      <p>A confirmação digitada é: {{ confirma }}</p>
+      <p>A confirmação digitada é: {{ confirmacao }}</p>
     </div>
   </div>
 </template>
-
 <style scoped>
+
+.retorno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  margin-left: 10px;
+  padding: 5px;
+}
 .carrinho {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Times New Roman", Times, serif;
-  color: brown;
+  color: rgb(255, 255, 255);
 }
 .wrap-carrinho .carrinho-total {
   position: fixed;
@@ -178,6 +221,7 @@ function validar() {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: white;
 }
 .detalhes-livro p {
   margin: 0;
@@ -189,6 +233,7 @@ function validar() {
 }
 
 .detalhes-livro input[type="number"] {
+  color: white;
   width: 50px;
   text-align: center;
   border: none;
@@ -202,7 +247,7 @@ function validar() {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 0;
   margin: 0;
 }
@@ -218,15 +263,16 @@ function validar() {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 140vh;
   color: white;
 }
 .form {
   max-width: 400px;
   padding: 20px;
+  padding-right: 33px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: brown;
+  background-color: rgb(0, 0, 0);
 }
 .centro {
   margin-bottom: 10px;
@@ -261,5 +307,12 @@ input {
   background-color: white;
   border-radius: #ccc 3px;
   color: brown;
+}
+.body {
+  display: auto;
+}
+.fechamentoCompra h2, p {
+  color: white;
+  margin: 0px;
 }
 </style>

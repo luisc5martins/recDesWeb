@@ -67,6 +67,10 @@ function formatarPreco(preco) {
     display: flex;
     margin-bottom: 10px;
     color: white;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-style: solid;
 }
 
 .detalhes-livro {
@@ -74,6 +78,8 @@ function formatarPreco(preco) {
     flex-direction: column;
     width: 100%;
     color: white;
+    padding-top: 5px;
+    padding-right: 5px;
 }
 
 .detalhes-livro p {
@@ -121,5 +127,9 @@ function formatarPreco(preco) {
 .wrapButton {
     border-radius: 40px;
     color: white;
+}
+.imagem-livro {
+    padding-top: 5px;
+    padding-left: 5px;
 }
 </style>

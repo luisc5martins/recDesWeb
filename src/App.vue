@@ -17,9 +17,10 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 
 <style scoped>
 .container-geral {
+  display: auto;
+  background-color: rgb(0, 0, 0);
   display: grid;
-  grid-template-rows: 3fr 1fr;
-  background-color: rgb(0, 0, 0)
+  grid-template-rows: 1fr 7fr;
 }
 
 .h1 {

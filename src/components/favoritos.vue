@@ -1,7 +1,6 @@
 <script setup>
 
-import { fav, removerItemFavorito, atualizaQuantidadeItem, limparFavorito } from '@/_data/favoritos.js'
-import { livros } from '@/_data/livros.js'
+import { fav, removerItemFavorito, limparFavorito } from '@/_data/favoritos.js'
 import messageFav from '@/components/messageFav.vue'
 import MButton from './MButton.vue';
 
@@ -44,21 +43,27 @@ function formatarPrecoFav(preco) {
 </template>
 
 <style scoped>
-.favs {
+.favoritos {
     min-width: 20%;
     text-align: center;
+    color: white;
 }
 
-.wrap-favoritos .favoritos-total {
+.wrap-favoritos {
     position: static;
     bottom: 3%;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.item-favoritos-fav .info-livro-fav {
+.item-fav .info-livro-fav {
     display: flex;
     margin-bottom: 10px;
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-style: solid;
 }
 
 .detalhes-livro-fav {
@@ -66,16 +71,20 @@ function formatarPrecoFav(preco) {
     flex-direction: column;
     width: 100%;
     color: white;
+    padding-top: 5px;
+    padding-right: 5px;
 }
 
 .detalhes-livro-fav p {
     margin: 0;
+    color: white;
 }
 
 .detalhes-livro-fav div {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    color: white;
 }
 
 .detalhes-livro-fav input[type='number'] {
@@ -85,6 +94,7 @@ function formatarPrecoFav(preco) {
     border-bottom: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     margin-left: 10px;
+    color: white;
 }
 
 .detalhes-livro-fav button {
@@ -99,18 +109,23 @@ function formatarPrecoFav(preco) {
 
 .livro-preco-fav {
     margin-left: auto;
+    color: white;
 }
 
-.icon-capa-livro-fav {
+.capa-livro-fav {
     width: 30px;
     margin-right: 10px;
 }
 
 .wrapButton-fav {
     border-radius: 40px;
+    color: white;
 }
-
-.capa-livro-fav {
-    width: 200px;
+.imagem-livro-fav {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.favoritos h2 {
+ margin: 0px;
 }
 </style>
