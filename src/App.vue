@@ -8,7 +8,7 @@ import MeuCarrinho from './components/MeuCarrinho.vue';
 
 <template>
   <div class="cabecalho">
-    <img src="cabecalho.png" alt="">
+    <img src="@/img/cabecalho.png" alt="">
   </div>
   <div class="container-geral">
     <router-view />
